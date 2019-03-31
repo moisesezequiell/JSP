@@ -2,19 +2,22 @@ package br.com.fastshop.model;
 
 public class Cliente {
 	
-	private int id;
+	private String id;
 	private String nome;
-	private String documento;
-	private int idade;
+	private String cpf;
+		
+	public Cliente() {}
 
-	public Cliente() {
+	public Cliente(String nome, String cpf) {
+		this.nome = nome;
+		this.cpf = cpf;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -26,25 +29,14 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public String getDocumento() {
-		return documento;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	@Override
-	public String toString() {
-		return "Cliente [nome=" + nome + ", documento=" + documento + ", idade=" + idade + "]";
-	}
+			
 	
+
 }

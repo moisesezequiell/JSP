@@ -1,17 +1,21 @@
 package br.com.fastshop.service;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import br.com.fastshop.model.Cliente;
+import br.com.fastshop.repository.ClienteRepository;
 
 public class ClienteService {
-
-	public Cliente criarCliente (String nome, String documento , int idade){
-		Cliente c1 = new  Cliente();
-		c1.setNome(nome);
-		c1.setDocumento(documento);
-		c1.setIdade(idade);
-		return c1;
-		
-		
+	
+	public void salvar (Cliente cliente) throws ClassNotFoundException, SQLException{
+		ClienteRepository repository = new ClienteRepository();
+		repository.salvar(cliente);
+	}
+	
+	public List<Cliente> listaDeClientes() throws SQLException, ClassNotFoundException{
+		ClienteRepository repository = new ClienteRepository();
+		return repository.listaDeClientes();
 	}
 
 }
